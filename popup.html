@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <title>SmartBlock</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+   
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+  	<div class="row">
+  		<div class="btn btn-light col-6 pl-4" id="mainmenubtn">
+  			SmartBlock
+  		</div>
+  		<div class="btn btn-light col-6 pr-4" id="enablemenubtn">
+  			Enabled
+  		</div>
+  	</div>
+  	
+
+    <div class="mainsection mt-1" id="mainsection">
+    	<div class="row pt-2 ml-1 " >
+	    	<div class="col-3">
+	    		<label class="switch" id="switch" for="internalswitch" data-bind="stopBubble:parentAction">
+		  			<input id="internalswitch" type="checkbox" >
+		  			<span class="slider round"></span>
+				</label>
+	    	</div>
+    		<a id="domaintext" class="domaintext col-7 text-center mx-auto m-1">google.com</a>
+    	</div>
+
+		<p><small id="blockstatetxt">Ads are blocked in this site</small></p>
+    </div>
+
+    <div class="refreshsection row " id="refreshsection">
+    	<div class="btn btn-primary col-12">Refresh</div>
+    </div>
+
+    <div class="enabledsection" id="enabledsection">
+
+		<p><small id="blockstatetxt">ENABLED SECTION</small></p>
+
+		<ul class="list-group" id="enabledlist">
+		  <li class="list-group-item">Site 1</li>
+		  <li class="list-group-item">Site 2</li>
+		</ul>
+    </div>
+
+	<script  src="background.js"></script>
+  </body>
+</html>
