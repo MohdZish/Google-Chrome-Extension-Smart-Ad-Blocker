@@ -1,13 +1,13 @@
 {
-  "name": "SmartBlock",
-  "version" : "1.0",
-  "description" : "A simple Adblocker",
+  "name": "SmartBlock - Adblocker",
+  "version" : "0.0.0.1",
+  "description" : "A smart adblocker for a safe web navigation.",
   "permissions" : [
-    "webRequest", "webRequestBlocking", "<all_urls>", "tabs", "storage"
+    "webRequest", "webRequestBlocking", "http://*/*", "https://*/*", "tabs", "storage"
   ],
 
   "background" : {
-    "scripts" : ["background.js"]
+    "scripts" : ["background.js", "storage.js"]
   },
 
   "browser_action": {
@@ -20,8 +20,23 @@
         "128": "icons/logo_128x128.png"
     },
 
-  "content_security_policy": "script-src 'self' https://maxcdn.bootstrapcdn.com; object-src 'self';",
+  "content_scripts": [{
+    "matches": ["http://*/*"],
+     "css": [
+        "assets/css/fontawesome.min.css",
+        "assets/css/regular.min.css"
+     ]
+  }],
 
+  "web_accessible_resources": [
+    "assets/css/fontawesome.min.css",
+    "assets/css/regular.min.css",
+    "assets/webfonts/fa-regular-400.woff2" 
+  ],
+
+  "content_security_policy": "script-src 'self' https://maxcdn.bootstrapcdn.com; object-src 'self';",
+  "content_security_policy": "script-src 'self' https://use.fontawesome.com; object-src 'self'",
+  "content_security_policy": "script-src 'self' https://fonts.googleapis.com; object-src 'self'",
 
   "manifest_version": 2
 }
