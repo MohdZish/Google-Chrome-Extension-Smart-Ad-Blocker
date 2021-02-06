@@ -10,6 +10,7 @@ if (document.title == "SmartBlock") {
 		    domain = (new URL(domainurl));
 		    domain = domain.hostname;
 		    document.getElementById('domaintext').innerHTML = domain;
+		 	
 		});
 
 
@@ -146,6 +147,10 @@ if (document.title == "SmartBlock") {
 		mainmenu.style.display = "none";
 
 		fillenabled();
+
+
+		document.getElementById('mainmenubtn').classList.add("inactivebtn");
+		document.getElementById('enablemenubtn').classList.remove("inactivebtn");
 		
 	}
 
@@ -155,6 +160,9 @@ if (document.title == "SmartBlock") {
 
 		enabledmenu.style.display = "none";
 		mainmenu.style.display = "block";
+
+		document.getElementById('mainmenubtn').classList.remove("inactivebtn");
+		document.getElementById('enablemenubtn').classList.add("inactivebtn");
 	}
 
 	document.getElementById('enablemenubtn').addEventListener('click', showenable);
@@ -184,7 +192,14 @@ if (document.title == "SmartBlock") {
 			chrome.storage.sync.set({'storedArray': newarray}, function() {
 			   showenable();
 			});
-;		});	
+		});	
 	}
+
+
+	chrome.storage.sync.get(['totaladscounter'], function(result) {
+  	if(document.title == "SmartBlock"){
+			document.getElementById('totalblockedtxt').innerHTML = result.totaladscounter;
+		}
+	});
 
 }
