@@ -3,49 +3,74 @@
   <head>
     <title>SmartBlock</title>
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-   
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
   	<div class="row">
-  		<div class="btn btn-light col-6 pl-4" id="mainmenubtn">
+  		<div class="btn btn-light col-6 pl-5  d-flex align-items-center font1" id="mainmenubtn">
   			SmartBlock
   		</div>
-  		<div class="btn btn-light col-6 pr-4" id="enablemenubtn">
-  			Enabled
+  		<div class="btn btn-light col-6 pl-4 inactivebtn d-flex align-items-center font1 enblbtn" id="enablemenubtn">
+  			Enabled <i class="far fa-check-circle ml-2 enabledicon"></i>
   		</div>
   	</div>
   	
-
-    <div class="mainsection mt-1" id="mainsection">
+  	
+    <div class="mainsection mt-2" id="mainsection">
+    	<div class="row">
+    		<p class="text-left ml-3 pt-1 font0 col-9">Ad Block Settings</p>
+			<div class="btn text-left pt-1 font0 col-2"><i class="fas fa-cog"></i></div>
+    	</div>
+    	
     	<div class="row pt-2 ml-1 " >
-	    	<div class="col-3">
+	    	<div class="col-2">
 	    		<label class="switch" id="switch" for="internalswitch" data-bind="stopBubble:parentAction">
 		  			<input id="internalswitch" type="checkbox" >
 		  			<span class="slider round"></span>
 				</label>
 	    	</div>
-    		<a id="domaintext" class="domaintext col-7 text-center mx-auto m-1">google.com</a>
+    		<div id="domaintext" class="domaintext col-7 text-center mx-auto m-1 font3">google.com</div>
     	</div>
 
-		<p><small id="blockstatetxt">Ads are blocked in this site</small></p>
+		<p id="blockstatetxt" class="font2">Ads are blocked in this site</p>
+
+		<div class="row mb-3">
+			<div class="blockedsection col-md-8 mx-auto">
+				<div class="row">
+					<i class="fas fa-lock col-3 blockicon pt-3"></i>
+					<div class="col-8">
+						<div class="font3 mt-2">Total ads blocked</div>
+	   		 			<div id="totalblockedtxt" class="font0 text-center mt-2 mb-2">number</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+
+
+		<div class="refreshsection text-center mb-3" id="refreshsection">
+	    	<div id="refreshbtn" class="btn btn-primary refreshbtn"><i class="fas fa-sync-alt mr-2"></i> Refresh</div>
+	    </div>
     </div>
 
-    <div class="refreshsection row " id="refreshsection">
-    	<div class="btn btn-primary col-12">Refresh</div>
-    </div>
-
-    <div class="enabledsection" id="enabledsection">
-
-		<p><small id="blockstatetxt">ENABLED SECTION</small></p>
+    <div class="enabledsection mt-2" id="enabledsection">
+    	<div class="row">
+    		<p class="text-left ml-3 pt-2 font0 col-8">Enabled Websites</p>
+			<div class="btn clrbtn text-left pb-1 font0 col-3 text-primary" id="clearenabledbtn">Clear</div>
+    	</div>
 
 		<ul class="list-group" id="enabledlist">
-		  <li class="list-group-item">Site 1</li>
-		  <li class="list-group-item">Site 2</li>
+
 		</ul>
     </div>
 
-	<script  src="background.js"></script>
+	<script  src="main.js"></script>
   </body>
 </html>
