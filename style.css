@@ -1,8 +1,7 @@
 
 
 body{
-  width: 200px;
-  background-color: yelslow;
+  width: 300px;
 }
 
 .headertext{
@@ -25,18 +24,84 @@ p {
   justify-content: center;
 }
 
-.mainsection{
-  background-color: #f5f5f5 !important;
+
+.btn-light{
+  background-color: white !important;
+  border-radius: 2px !important;
+  height: 50px !important;
 }
 
-.refreshsection{
+.btn-light:hover{
+  background-color: white !important;
+}
 
+.inactivebtn{ /* Never change this name */
+  background-color: #fafafa !important;
+  height: 50px;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+
+.enblbtn{
+  padding-left: 35px !important;
+}
+
+.mainsection{
+  background-color: #f5f5f5ss !important;
+}
+
+.blockedsection{
+  border: 1px solid lightgray;
+  width: 250px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.refreshbtn{
+  width: 200px !important;
+}
+
+.enabledicon{
+  color: #a3a3a3;
+}
+
+.blockicon{
+  font-size: 40px;
+  opacity: 50%;
+}
+
+.font0{
+  font-family: Raleway;
+  font-weight: 700;
+
+}
+
+.font1{
+  font-family: Raleway;
+  color: #4f4f4f;
+  font-weight: 400;
+}
+
+.font2{
+  font-family: Raleway;
+  font-size: 13px;
+}
+
+.font3{
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: 16px !important;
 }
 
 .domaintext{
   font-size: 12px;
 }
 
+
+.clrbtn{
+
+}
 /* The switch - the box around the slider */
 .switch {
   position: relative;
@@ -60,7 +125,7 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #2196F3;
+  background-color: #00DD80;
   -webkit-transition: .4s;
   transition: .4s;
   margin: 0 auto;
@@ -79,7 +144,7 @@ p {
 }
 
 input:checked + .slider {
-  background-color: red;
+  background-color: #8a8a8a;
 }
 
 input:focus + .slider {
