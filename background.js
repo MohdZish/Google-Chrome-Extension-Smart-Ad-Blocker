@@ -348,32 +348,47 @@ const adservers = [
 	"*://*.r9---sn-4gxx-25gel.googlevideo.com/*",
 	"*://*.r9---sn-4gxx-25gy.googlevideo.com/*",
 	"*://*.r6---sn-4g5e6nes.googlevideo.com/*",
+	"*://*.googlesyndication.com/*",
+	"*://*.googleads.g.doublick.net/*",
+	"*://*.www.doubleclick.net/*",
+	"*://*.tpc.googlesyndication.com/*",
 ]
 
 var allowedsites = [
-	"*://*.www.doubleclick.net/*",
 	"*://*.www.9anime.to/*",
+	"*://*.www.forbes.com/*",
 ]
 
-
+chrome.storage.sync.get(['storedArray'], function(result) {
 chrome.tabs.query({currentWindow: true, active: true}, function(tabs){ //Get Current Domain url
 		    var domainurl = tabs[0].url;
 		    let domain = (new URL(domainurl));
 		    domain = domain.hostname;
-		    //alert(domain);
 
-		    if(domain !== allowedsites.includes("www12.9anime.to")){
-		    	chrome.webRequest.onBeforeRequest.addListener(
-				function(details){ return {cancel: true}},
+		    
+			  	newarray = result.storedArray;
+
+			  	blockeron = true;
+				
+
+			  	if(blockeron == true){
+			  		
+		    	chrome.webRequest.onBeforeRequest.addListener( function(details)
+		    	{ 	
+		    		//Total blocked ads
+		    		blockedads += 1;
+		    		chrome.storage.sync.set({'totaladscounter': blockedads});
+		    		
+		    		return {cancel: true}
+		    	},
+
 				{ urls: adservers},
 				["blocking"]
 				)
 		    }
+			});
+
+		    
 		});
 
-//--------------------------ADDING STORAGE TO CHROME------------------------------
-
-chrome.storage.sync.set({'storedArray': allowedsites}, function() {
-    alert("First added")
-});
 
