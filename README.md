@@ -6,6 +6,8 @@ https://chrome.google.com/webstore/detail/smartblock-adblocker/hjpfndnpahcmoeabh
 Adblockers are simple extensions in a browser that can allow an ad free expreience for the user.
 Installing these adblockers allow you to automatically block all ads from appearing on here webpage.
 
+![Alt text](/img1.jpg?raw=true "SmartBlock Extension")
+
 This Google Chrome extension works like any other chrome adblocker, but It was still a very interesting project. 
 Making the adblocker more user friendly was a primary goal, and also with a nice modern UI.
 
